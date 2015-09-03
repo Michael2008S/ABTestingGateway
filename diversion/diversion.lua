@@ -234,7 +234,7 @@ if not upstream then
     upstream = backend
 end
 
-if upstream then
+if upstream ~= ngx.null and upstream then
     ngx.var.backend = upstream
 else
     upstream = default_backend
